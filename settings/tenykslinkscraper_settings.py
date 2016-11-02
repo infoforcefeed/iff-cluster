@@ -10,13 +10,16 @@ ZMQ_CONNECTION = {
 POST_URL_TITLES = True
 POST_URLS = {
     "#infoforcefeed": "http://infoforcefeed.shithouse.tv/submit",
-    "#olegdb": "http://infoforcefeed.shithouse.tv/submit"
+    "#olegdb": "http://infoforcefeed.shithouse.tv/submit",
+    "#tenyks": "http://infoforcefeed.shithouse.tv/submit",
 }
 POST_URL_TITLES = {
     "#infoforcefeed": True,
-    "#olegdb": True
+    "#olegdb": True,
+    "#tenyks": True,
 }
 POST_URLS_SALTS = {
     "#infoforcefeed": "KBzzuxJp2hXo4G6MOWCH",
-    "#olegdb": "KBzzuxJp2hXo4G6MOWCH"
+    "#olegdb": "KBzzuxJp2hXo4G6MOWCH",
+    "#tenyks": "KBzzuxJp2hXo4G6MOWCH",
 }

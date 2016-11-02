@@ -12,12 +12,12 @@
       "retries": 5,
       "flood_protection": true,
       "password": "",
-      "nicks": ["tenyks-dev", "tenyks-dev_"],
+      "nicks": ["tenyks", "JennyBreath"],
       "ident": "tenyks",
       "real_name": "tenyks IRC bot",
       "commands": [],
       "admins": ["vhost-"],
-      "channels": ["#tenyks"],
+      "channels": ["#tenyks", "#infoforcefeed", "#olegdb"],
       "ssl": true
     }
   ],
