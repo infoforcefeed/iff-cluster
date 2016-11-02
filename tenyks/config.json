@@ -1,0 +1,25 @@
+{
+  "debug": false,
+  "service": {
+    "sender_bind": "tcp://*:61123",
+    "receiver_bind": "tcp://*:61124"
+  },
+  "connections": [
+    {
+      "name": "freenode",
+      "host": "irc.freenode.net",
+      "port": 6697,
+      "retries": 5,
+      "flood_protection": true,
+      "password": "",
+      "nicks": ["tenyks-dev", "tenyks-dev_"],
+      "ident": "tenyks",
+      "real_name": "tenyks IRC bot",
+      "commands": [],
+      "admins": ["vhost-"],
+      "channels": ["#tenyks"],
+      "ssl": true
+    }
+  ],
+  "log_location": "stdout"
+}

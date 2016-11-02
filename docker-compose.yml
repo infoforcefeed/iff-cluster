@@ -1,0 +1,71 @@
+version: '2'
+services:
+  settings:
+    build: .
+    volumes:
+      - ./settings:/opt/tenyks-settings
+  tenyks:
+    build: tenyks
+    ports:
+      - "61123:61123"
+      - "61124:61124"
+  tenyksscripts:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenyksscripts", "/opt/tenyks-settings/tenyksscripts_settings.py"]
+  tenyksfeeds:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenyksfeeds", "/opt/tenyks-settings/tenyksfeeds_settings.py"]
+  tenykslinkscraper:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenykslinkscraper", "/opt/tenyks-settings/tenykslinkscraper_settings.py"]
+  tenykswunderground:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenykswunderground", "/opt/tenyks-settings/tenyksweather_settings.py"]
+    environment:
+      - WUNDERGROUND_API_KEY=${WUNDERGROUND_API_KEY}
+  tenyksleetpoints:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenyksleetpoints", "/opt/tenyks-settings/tenyksleetpoints_settings.py"]
+  tenyksgentoo:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenyksgentoo", "/opt/tenyks-settings/tenyksgentoo_settings.py"]
+  tenykslol:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenykslol", "/opt/tenyks-settings/tenykslol_settings.py"]
+  tenykstwitter:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenykstwitter", "/opt/tenyks-settings/tenykstwitter_settings.py"]
+volumes:
+  settings:
