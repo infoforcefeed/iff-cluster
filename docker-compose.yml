@@ -9,6 +9,7 @@ services:
     ports:
       - "61123:61123"
       - "61124:61124"
+    restart: always
   tenyksscripts:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -16,6 +17,7 @@ services:
     volumes_from:
       - settings
     command: ["tenyksscripts", "/opt/tenyks-settings/tenyksscripts_settings.py"]
+    restart: always
   tenyksfeeds:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -23,6 +25,7 @@ services:
     volumes_from:
       - settings
     command: ["tenyksfeeds", "/opt/tenyks-settings/tenyksfeeds_settings.py"]
+    restart: always
   tenykslinkscraper:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -30,6 +33,7 @@ services:
     volumes_from:
       - settings
     command: ["tenykslinkscraper", "/opt/tenyks-settings/tenykslinkscraper_settings.py"]
+    restart: always
   tenykswunderground:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -39,6 +43,7 @@ services:
     command: ["tenykswunderground", "/opt/tenyks-settings/tenyksweather_settings.py"]
     environment:
       - WUNDERGROUND_API_KEY=${WUNDERGROUND_API_KEY}
+    restart: always
   tenyksleetpoints:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -46,6 +51,7 @@ services:
     volumes_from:
       - settings
     command: ["tenyksleetpoints", "/opt/tenyks-settings/tenyksleetpoints_settings.py"]
+    restart: always
   tenyksgentoo:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -53,6 +59,7 @@ services:
     volumes_from:
       - settings
     command: ["tenyksgentoo", "/opt/tenyks-settings/tenyksgentoo_settings.py"]
+    restart: always
   tenykslol:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -60,6 +67,7 @@ services:
     volumes_from:
       - settings
     command: ["tenykslol", "/opt/tenyks-settings/tenykslol_settings.py"]
+    restart: always
   tenykstwitter:
     image: kyleterry/tenyks-contrib
     depends_on:
@@ -67,5 +75,6 @@ services:
     volumes_from:
       - settings
     command: ["tenykstwitter", "/opt/tenyks-settings/tenykstwitter_settings.py"]
+    restart: always
 volumes:
   settings:
