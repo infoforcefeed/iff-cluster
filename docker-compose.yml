@@ -68,6 +68,14 @@ services:
       - settings
     command: ["tenykslol", "/opt/tenyks-settings/tenykslol_settings.py"]
     restart: always
+  tenykssame:
+    image: kyleterry/tenyks-contrib
+    depends_on:
+      - tenyks
+    volumes_from:
+      - settings
+    command: ["tenykssame", "/opt/tenyks-settings/tenykssame_settings.py"]
+    restart: always
   tenykstwitter:
     image: kyleterry/tenyks-contrib
     depends_on:
