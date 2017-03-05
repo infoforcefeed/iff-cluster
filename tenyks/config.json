@@ -9,7 +9,6 @@
       "name": "freenode",
       "host": "irc.freenode.net",
       "port": 6697,
-      "retries": 5,
       "flood_protection": true,
       "password": "",
       "nicks": ["tenyks", "JennyBreath"],
@@ -21,5 +20,7 @@
       "ssl": true
     }
   ],
-  "log_location": "stdout"
+  "logging": {
+    "debug": false
+  }
 }
